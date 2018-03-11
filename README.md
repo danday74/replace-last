@@ -7,3 +7,4 @@
 [![downloads](https://img.shields.io/npm/dm/node-template-18.svg)](https://www.npmjs.com/package/node-template-18)
 
 **Template for creating an npm package in 2018**
+
