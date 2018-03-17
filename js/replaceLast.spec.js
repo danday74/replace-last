@@ -8,6 +8,11 @@ describe('replaceLast', function() {
 
   describe('example', function() {
 
+    it('number', function() {
+      var result = replaceLast(778, 8, 7);
+      expect(result).to.equal('777');
+    });
+
     it('string', function() {
       var result = replaceLast('hello hello hello', 'hello', 'bye');
       expect(result).to.equal('hello hello bye');
@@ -24,7 +29,30 @@ describe('replaceLast', function() {
     });
   });
 
+  describe('number', function() {
+
+    it('none', function() {
+      var result = replaceLast(99, 7, 8);
+      expect(result).to.equal(99);
+    });
+
+    it('single', function() {
+      var result = replaceLast(9, 9, 8);
+      expect(result).to.equal('8');
+    });
+
+    it('many', function() {
+      var result = replaceLast(99, 9, 8);
+      expect(result).to.equal('98');
+    });
+  });
+
   describe('string', function() {
+
+    it('none', function() {
+      var result = replaceLast('hello hello', 'bonjour', 'bye');
+      expect(result).to.equal('hello hello');
+    });
 
     it('single', function() {
       var result = replaceLast('hello', 'hello', 'bye');
@@ -36,36 +64,18 @@ describe('replaceLast', function() {
       expect(result).to.equal('hello bye');
     });
 
-    it('none', function() {
-      var result = replaceLast('hello hello', 'bonjour', 'bye');
-      expect(result).to.equal('hello hello');
-    });
-
     it('contains regex chars', function() {
       var result = replaceLast('hello . hello . hello', '.', 'bye');
       expect(result).to.equal('hello . hello bye hello');
     });
   });
 
-  describe('number', function() {
-
-    it('single', function() {
-      var result = replaceLast(9, 9, 8);
-      expect(result).to.equal('8');
-    });
-
-    it('many', function() {
-      var result = replaceLast(99, 9, 8);
-      expect(result).to.equal('98');
-    });
+  describe('regex', function() {
 
     it('none', function() {
-      var result = replaceLast(99, 7, 8);
-      expect(result).to.equal(99);
+      var result = replaceLast('hello hello', /bonjour/, 'bye');
+      expect(result).to.equal('hello hello');
     });
-  });
-
-  describe('regex', function() {
 
     it('single', function() {
       var result = replaceLast('hello', /hello/, 'bye');
@@ -82,13 +92,36 @@ describe('replaceLast', function() {
       expect(result).to.equal('hello bye');
     });
 
+    it('contains regex chars', function() {
+      var result = replaceLast('hello . hello . hello', /./, 'bye');
+      expect(result).to.equal('hello . hello . hellbye');
+    });
+  });
+
+  describe('RegExp', function() {
+
     it('none', function() {
-      var result = replaceLast('hello hello', /bonjour/, 'bye');
+      var result = replaceLast('hello hello', RegExp('bonjour'), 'bye');
       expect(result).to.equal('hello hello');
     });
 
+    it('single', function() {
+      var result = replaceLast('hello', RegExp('hello'), 'bye');
+      expect(result).to.equal('bye');
+    });
+
+    it('many', function() {
+      var result = replaceLast('hello hello', RegExp('hello'), 'bye');
+      expect(result).to.equal('hello bye');
+    });
+
+    it('many with flag', function() {
+      var result = replaceLast('hello hello', RegExp('hello', 'g'), 'bye');
+      expect(result).to.equal('hello bye');
+    });
+
     it('contains regex chars', function() {
-      var result = replaceLast('hello . hello . hello', /./, 'bye');
+      var result = replaceLast('hello . hello . hello', RegExp('.'), 'bye');
       expect(result).to.equal('hello . hello . hellbye');
     });
   });
