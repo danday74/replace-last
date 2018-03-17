@@ -14,9 +14,15 @@ describe('replaceLast', function() {
       expect(result).to.equal('hello hello bye');
     });
 
-    it('string', function() {
+    it('regex', function() {
       // var replaceLast = require('replace-last');
       var result = replaceLast('hello hello hello', /hello/, 'bye');
+      expect(result).to.equal('hello hello bye');
+    });
+
+    it('RegExp', function() {
+      // var replaceLast = require('replace-last');
+      var result = replaceLast('hello hello hello', RegExp('hello'), 'bye');
       expect(result).to.equal('hello hello bye');
     });
   });
@@ -71,6 +77,11 @@ describe('replaceLast', function() {
 
     it('many', function() {
       var result = replaceLast('hello hello', /hello/, 'bye');
+      expect(result).to.equal('hello bye');
+    });
+
+    it('many with flag', function() {
+      var result = replaceLast('hello hello', /hello/g, 'bye');
       expect(result).to.equal('hello bye');
     });
 

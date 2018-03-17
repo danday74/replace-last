@@ -62,6 +62,9 @@ replaceLast('hello hello hello', 'hello', 'bye');
 
 replaceLast('hello hello hello', /hello/, 'bye');
 // => 'hello hello bye'
+
+replaceLast('hello hello hello', RegExp('hello'), 'bye');
+// => 'hello hello bye'
 ```
 
 
