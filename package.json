@@ -1,6 +1,6 @@
 {
-  "name": "node-template-18",
-  "version": "1.1.6",
+  "name": "replace-last",
+  "version": "1.1.0",
   "description": "Template for creating an npm package in 2018",
   "author": "danday74",
   "license": "ISC",
@@ -22,7 +22,10 @@
     "istanbul": "^0.4.5",
     "mocha": "^5.0.4"
   },
-  "keywords": [],
+  "keywords": [
+    "replace",
+    "last"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/danday74/node-template-18.git"
