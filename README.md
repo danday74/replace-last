@@ -79,7 +79,9 @@ God is the **last**!
 
 Jesus, King of Kings (**first**) put himself **last** - paying the death penalty for your wrongdoing - by willingly dying on the cross for you in your place.
 
-The nails never held him there, His love for you did! He commands men everywhere to repent and offers forgiveness for all those that believe!
+He didn't do this because you loved Him. He did this even though you didn't love Him. He did this in the midst of all your hatred, your lust and worst of all, your apathy!
+
+The nails never held him there, His love for you did! He commands men everywhere to repent and offers forgiveness for all them that believe!
 
 
 
