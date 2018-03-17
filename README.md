@@ -1,12 +1,12 @@
 # replace-last
 
 <br>[![linux](https://img.shields.io/travis/danday74/replace-last/master.svg?label=linux)](https://travis-ci.org/danday74/replace-last)
-[![windows](https://img.shields.io/appveyor/ci/danday74/awol/master.svg?label=windows)](https://ci.appveyor.com/project/danday74/awol)
+[![windows](https://img.shields.io/appveyor/ci/danday74/replace-last/master.svg?label=windows)](https://ci.appveyor.com/project/danday74/replace-last)
 [![coverage](https://coveralls.io/repos/github/danday74/replace-last/badge.svg)](https://coveralls.io/github/danday74/replace-last)
 <br>[![npm](https://img.shields.io/npm/v/replace-last.svg)](https://www.npmjs.com/package/replace-last)
 [![dependencies](https://david-dm.org/danday74/replace-last/status.svg)](https://david-dm.org/danday74/replace-last)
 [![downloads](https://img.shields.io/npm/dm/replace-last.svg)](https://www.npmjs.com/package/replace-last)
-[![node](https://img.shields.io/node/v/awol.svg)](https://www.npmjs.com/package/awol)
+[![node](https://img.shields.io/node/v/replace-last.svg)](https://www.npmjs.com/package/replace-last)
 
 **JavaScript replaceLast function - Replaces last match for pattern in string with replacement**
 
