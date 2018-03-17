@@ -13,7 +13,8 @@ var strReplaceLast = function(str, pattern, replacement) {
 };
 
 var regexReplaceLast = function(str, pattern, replacement) {
-  pattern = new RegExp(pattern.source, 'g');
+  var flags = (pattern.flags.indexOf('g') === -1) ? pattern.flags + 'g' : pattern.flags;
+  pattern = new RegExp(pattern.source, flags);
   return str.replace(pattern, function(match, offset, str) {
     var follow = str.slice(offset);
     var isLast = follow.match(pattern).length === 1;
