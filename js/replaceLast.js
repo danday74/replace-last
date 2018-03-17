@@ -13,7 +13,16 @@ var strReplaceLast = function(str, pattern, replacement) {
 };
 
 var regexReplaceLast = function(str, pattern, replacement) {
-  var flags = (pattern.flags.indexOf('g') === -1) ? pattern.flags + 'g' : pattern.flags;
+
+  var flags;
+
+  /* istanbul ignore else */
+  if (pattern.flags != null) {
+    flags = (pattern.flags.indexOf('g') === -1) ? pattern.flags + 'g' : pattern.flags;
+  } else {
+    flags = 'g';
+  }
+
   pattern = new RegExp(pattern.source, flags);
   return str.replace(pattern, function(match, offset, str) {
     var follow = str.slice(offset);
