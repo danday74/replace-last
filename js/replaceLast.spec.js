@@ -9,19 +9,16 @@ describe('replaceLast', function() {
   describe('example', function() {
 
     it('string', function() {
-      // var replaceLast = require('replace-last');
       var result = replaceLast('hello hello hello', 'hello', 'bye');
       expect(result).to.equal('hello hello bye');
     });
 
     it('regex', function() {
-      // var replaceLast = require('replace-last');
       var result = replaceLast('hello hello hello', /hello/, 'bye');
       expect(result).to.equal('hello hello bye');
     });
 
     it('RegExp', function() {
-      // var replaceLast = require('replace-last');
       var result = replaceLast('hello hello hello', RegExp('hello'), 'bye');
       expect(result).to.equal('hello hello bye');
     });
