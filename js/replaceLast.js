@@ -20,7 +20,7 @@ var regexReplaceLast = function(str, pattern, replacement) {
   if (pattern.flags != null) {
     flags = (pattern.flags.indexOf('g') === -1) ? pattern.flags + 'g' : pattern.flags;
   } else {
-    flags = 'g';
+    flags = 'g'; // Node 4 fix
   }
 
   pattern = new RegExp(pattern.source, flags);
