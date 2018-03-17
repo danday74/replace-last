@@ -6,12 +6,17 @@
 [![dependencies](https://david-dm.org/danday74/replace-last/status.svg)](https://david-dm.org/danday74/replace-last)
 [![downloads](https://img.shields.io/npm/dm/replace-last.svg)](https://www.npmjs.com/package/replace-last)
 
-**JavaScript replaceLast function - Replaces last match for pattern in string with replacement - 1.5 KB**
+**JavaScript replaceLast function - Replaces last match for pattern in string with replacement**
 
 
 
+<br>
 
+## Introduction
 
+`replace-last` supports String and Regex replacement. It works in Node code and browsers.
+
+[View the code](js/replaceLast.js) | File size is 1.5 KB | Fully unit tested
 
 
 

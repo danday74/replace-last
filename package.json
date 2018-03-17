@@ -40,5 +40,8 @@
     "url": "https://github.com/danday74/replace-last/issues"
   },
   "homepage": "https://github.com/danday74/replace-last#readme",
-  "comment": "coveralls@2.11.16"
+  "comment": "coveralls@2.11.16",
+  "engines": {
+    "node": ">= 4.0.0"
+  }
 }
