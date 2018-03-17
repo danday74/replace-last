@@ -66,7 +66,6 @@ replaceLast('hello hello hello', /hello/, 'bye');
 
 
 
-
 <br>
 
 ## Author says
