@@ -7,9 +7,16 @@ var replaceLast = replaceLast || require('./replaceLast');
 describe('replaceLast', function() {
 
   describe('example', function() {
-    it('example', function() {
+
+    it('string', function() {
       // var replaceLast = require('replace-last');
       var result = replaceLast('hello hello hello', 'hello', 'bye');
+      expect(result).to.equal('hello hello bye');
+    });
+
+    it('string', function() {
+      // var replaceLast = require('replace-last');
+      var result = replaceLast('hello hello hello', /hello/, 'bye');
       expect(result).to.equal('hello hello bye');
     });
   });
