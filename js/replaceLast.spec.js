@@ -1,11 +1,14 @@
-/* global chai replaceLast */
+'use strict';
 
+var chai = require('chai');
 var expect = chai.expect;
+var replaceLast = require('./replaceLast');
 
 describe('replaceLast', function() {
 
   describe('example', function() {
     it('example', function() {
+      var replaceLast = require('./replaceLast');
       var result = replaceLast('hello hello hello', 'hello', 'bye');
       expect(result).to.equal('hello hello bye');
     });
