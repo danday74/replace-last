@@ -1,14 +1,14 @@
 'use strict';
 
-var chai = require('chai');
+var chai = chai || require('chai');
 var expect = chai.expect;
-var replaceLast = require('./replaceLast');
+var replaceLast = replaceLast || require('./replaceLast');
 
 describe('replaceLast', function() {
 
   describe('example', function() {
     it('example', function() {
-      var replaceLast = require('./replaceLast');
+      // var replaceLast = require('replace-last');
       var result = replaceLast('hello hello hello', 'hello', 'bye');
       expect(result).to.equal('hello hello bye');
     });

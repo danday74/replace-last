@@ -1,3 +1,5 @@
+'use strict';
+
 var isRegex = function(any) {
   return Object.prototype.toString.call(any) === '[object RegExp]';
 };

@@ -1,3 +1,5 @@
+'use strict';
+
 const replaceLast = require('./js/replaceLast');
 
 function main(str, pattern, replacement) {
