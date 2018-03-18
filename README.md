@@ -18,7 +18,7 @@
 
 `npm install --save replace-last`
 
-`replace-last` supports String and Regex replacement. It works in Node code and browsers.
+`replace-last` supports string and RegExp replacement. It works in Node code and browsers.
 
 [View the code](js/replaceLast.js) | File size 1.6 KB | Fully unit tested | Zero dependency
 

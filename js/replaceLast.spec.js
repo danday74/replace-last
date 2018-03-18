@@ -1,5 +1,6 @@
 'use strict';
 
+var _ = require('lodash');
 var chai = chai || require('chai');
 var expect = chai.expect;
 var replaceLast = replaceLast || require('./replaceLast');
@@ -33,7 +34,7 @@ describe('replaceLast', function() {
 
     it('none', function() {
       var result = replaceLast(99, 7, 8);
-      expect(result).to.equal(99);
+      expect(result).to.equal('99');
     });
 
     it('single', function() {
@@ -128,19 +129,58 @@ describe('replaceLast', function() {
 
   describe('invalid', function() {
 
+    function resultsFromArgs(str, pattern, replacement) {
+      return {
+        result: replaceLast(str, pattern, replacement),
+        lodashResult: _.replace(str, pattern, replacement)
+      };
+    }
+
     it('str not a string', function() {
-      var result = replaceLast({}, 'hello', 'bye');
-      expect(result).to.eql({});
+      var results = resultsFromArgs({}, 'hello', 'bye');
+      expect(results.result).to.equal('[object Object]');
+      expect(results.lodashResult).to.equal('[object Object]');
+      expect(results.result).to.equal(results.lodashResult);
+    });
+
+    it('str undefined', function() {
+      var results = resultsFromArgs(undefined, 'hello', 'bye');
+      expect(results.result).to.equal('undefined');
+      expect(results.lodashResult).to.equal(''); // inconsistent result, prefer 'undefined'
     });
 
     it('pattern not a regex or string', function() {
-      var result = replaceLast('hello hello', {}, 'bye');
-      expect(result).to.equal('hello hello');
+      var results = resultsFromArgs('hello hello', {}, 'bye');
+      expect(results.result).to.equal('hello hello');
+      expect(results.lodashResult).to.equal('hello hello');
+      expect(results.result).to.equal(results.lodashResult);
+    });
+
+    it('pattern undefined', function() {
+      var results = resultsFromArgs('hello hello', undefined, 'bye');
+      expect(results.result).to.equal('hello hello');
+      expect(results.lodashResult).to.equal('hello hello');
+      expect(results.result).to.equal(results.lodashResult);
     });
 
     it('replacement not a string', function() {
-      var result = replaceLast('hello hello', 'hello', {});
+      var results = resultsFromArgs('hello hello', 'hello', {});
+      expect(results.result).to.equal('hello [object Object]');
+      expect(results.lodashResult).to.equal('[object Object] hello');
+    });
+
+    it('replacement undefined', function() {
+      var results = resultsFromArgs('hello hello', 'hello', undefined);
+      expect(results.result).to.equal('hello undefined');
+      expect(results.lodashResult).to.equal('undefined hello');
+    });
+
+    it('replacement not given', function() {
+      var result = replaceLast('hello hello', 'hello');
       expect(result).to.equal('hello hello');
+      var lodashResult = _.replace('hello hello', 'hello');
+      expect(lodashResult).to.equal('hello hello');
+      expect(result).to.equal(lodashResult);
     });
   });
 });
