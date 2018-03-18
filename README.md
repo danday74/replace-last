@@ -20,7 +20,7 @@
 
 `replace-last` supports string and RegExp replacement. It works in Node code and browsers.
 
-[View the code](js/replaceLast.js) | File size 1.5 KB | Fully unit tested | Zero dependency
+[View the code](js/replaceLast.js) | File size 1.4 KB | Fully unit tested | Zero dependency
 
 
 
