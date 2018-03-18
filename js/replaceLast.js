@@ -30,7 +30,7 @@ var strReplaceLast = function(str, pattern, replacement) {
 
 var replaceLast = function(str, pattern, replacement) {
   str = '' + str;
-  if (arguments.length < 3) return str;
+  if (typeof replacement === 'undefined') return str;
   if (isRegex(pattern)) {
     return regexReplaceLast(str, pattern, replacement);
   } else {

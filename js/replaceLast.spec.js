@@ -171,7 +171,12 @@ describe('replaceLast', function() {
 
     it('replacement undefined', function() {
       var results = resultsFromArgs('hello hello', 'hello', undefined);
-      expect(results.result).to.equal('hello undefined');
+      // we use es5, lodash uses es6
+      // es6 can reliably determine the number of arguments passed in, es5 arguments.length is inconsistent across envs
+      // in es5 it is safer to return the original string where "replacement" is undefined,
+      // regardless as to whether it was literally passed in as undefined or just not given
+      // thus this result is consistent with the replacement not given result below
+      expect(results.result).to.equal('hello hello');
       expect(results.lodashResult).to.equal('undefined hello');
     });
 
