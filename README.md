@@ -44,11 +44,11 @@ replaceLast(str, pattern, replacement);
 
 ## Arguments
 
-str (string|number): The string (or number) to modify.
+str (string): The string to modify.
 
-pattern (RegExp|string|number): The pattern to replace.
+pattern (RegExp|string): The pattern to replace.
 
-replacement (string|number): The match replacement.
+replacement (string): The match replacement.
 
 ## Returns
 
@@ -57,9 +57,6 @@ replacement (string|number): The match replacement.
 ## Example
 
 ```javascript 1.5
-replaceLast(778, 8, 7);
-// => '777'
-
 replaceLast('hello hello hello', 'hello', 'bye');
 // => 'hello hello bye'
 
