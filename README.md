@@ -76,7 +76,7 @@ replaceLast(778, 8, 7);
 
 ## Author says
 
-God is the **last**!
+God is the **last**?
 
 > "Behold, I (Jesus) am coming quickly, and My reward is with Me, to give to each one according to the merit of his deeds (earthly works, faithfulness).
 > I am the Alpha and the Omega, the First and the Last, the Beginning and the End [the Eternal One]."
