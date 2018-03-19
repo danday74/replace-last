@@ -54,17 +54,20 @@ replacement (string): The match replacement.
 
 (string): Returns the modified string.
 
-## Example
+## Examples
 
 ```javascript 1.5
 replaceLast('hello hello hello', 'hello', 'bye');
+// => 'hello hello bye';
+
+replaceLast('hello hello hello', /he(ll)o/, 'rr');
+// => 'hello hello herro';
+
+replaceLast('hello hello hello', RegExp('.ell.'), 'bye');
 // => 'hello hello bye'
 
-replaceLast('hello hello hello', /hello/, 'bye');
-// => 'hello hello bye'
-
-replaceLast('hello hello hello', RegExp('hello'), 'bye');
-// => 'hello hello bye'
+replaceLast(778, 8, 7);
+// => '777'
 ```
 
 

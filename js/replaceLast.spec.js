@@ -20,12 +20,12 @@ describe('replaceLast', function() {
     });
 
     it('regex', function() {
-      var result = replaceLast('hello hello hello', /hello/, 'bye');
-      expect(result).to.equal('hello hello bye');
+      var result = replaceLast('hello hello hello', /he(ll)o/, 'rr');
+      expect(result).to.equal('hello hello herro');
     });
 
     it('RegExp', function() {
-      var result = replaceLast('hello hello hello', RegExp('hello'), 'bye');
+      var result = replaceLast('hello hello hello', RegExp('.ell.'), 'bye');
       expect(result).to.equal('hello hello bye');
     });
   });
@@ -98,6 +98,16 @@ describe('replaceLast', function() {
       expect(result).to.equal('hello bye');
     });
 
+    it('matching groups', function() {
+      var result = replaceLast('hello hello', /he(ll)o/, 'rr');
+      expect(result).to.equal('hello herro');
+    });
+
+    it('multiple matching groups', function() {
+      var result = replaceLast('hello hello', /(ll)(o)/, 'r');
+      expect(result).to.equal('hello herr');
+    });
+
     it('contains regex chars', function() {
       var result = replaceLast('hello . hello . hello', /./, 'bye');
       expect(result).to.equal('hello . hello . hellbye');
@@ -135,6 +145,16 @@ describe('replaceLast', function() {
       expect(function() {
         replaceLast('hello hello', RegExp('hello', 'q'), 'bye'); // eslint-disable-line no-invalid-regexp
       }).to.throw(SyntaxError);
+    });
+
+    it('matching groups', function() {
+      var result = replaceLast('hello hello', RegExp('he(ll)o'), 'rr');
+      expect(result).to.equal('hello herro');
+    });
+
+    it('multiple matching groups', function() {
+      var result = replaceLast('hello hello', RegExp('(ll)(o)'), 'r');
+      expect(result).to.equal('hello herr');
     });
 
     it('contains regex chars', function() {

@@ -18,10 +18,19 @@ var regexReplaceLast = function(str, pattern, replacement) {
   }
   var flags = (pattern.flags.indexOf('g') === -1) ? pattern.flags + 'g' : pattern.flags;
   pattern = new RegExp(pattern.source, flags);
-  return str.replace(pattern, function(match, offset, str) {
+  return str.replace(pattern, function(/* args expanded below */) {
+    var match = arguments[0];
+    var p = Array.prototype.slice.call(arguments, 1, arguments.length - 2);
+    var offset = arguments[arguments.length - 2];
+    var str = arguments[arguments.length - 1];
     var follow = str.slice(offset);
     var isLast = follow.match(pattern).length === 1;
-    return (isLast) ? replacement : match;
+    if (!isLast) return match;
+    if (!p.length) return replacement;
+    for (var i = 0; i < p.length; i++) {
+      match = strReplaceLast(match, p[i], replacement);
+    }
+    return match;
   });
 };
 
