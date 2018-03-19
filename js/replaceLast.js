@@ -5,13 +5,17 @@ var isRegex = function(any) {
 };
 
 var regexReplaceLast = function(str, pattern, replacement) {
-  var flags;
-  /* istanbul ignore else */
-  if (pattern.flags != null) {
-    flags = (pattern.flags.indexOf('g') === -1) ? pattern.flags + 'g' : pattern.flags;
-  } else {
-    flags = 'g'; // Node 4 fix
+  // Official MDN polyfill https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/flags
+  // for Node.js v4
+  if (RegExp.prototype.flags === undefined) {
+    Object.defineProperty(RegExp.prototype, 'flags', {
+      configurable: true,
+      get: function() {
+        return this.toString().match(/[gimuy]*$/)[0];
+      }
+    });
   }
+  var flags = (pattern.flags.indexOf('g') === -1) ? pattern.flags + 'g' : pattern.flags;
   pattern = new RegExp(pattern.source, flags);
   return str.replace(pattern, function(match, offset, str) {
     var follow = str.slice(offset);

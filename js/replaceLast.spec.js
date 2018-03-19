@@ -88,8 +88,13 @@ describe('replaceLast', function() {
       expect(result).to.equal('hello bye');
     });
 
-    it('many with flag', function() {
+    it('many with g flag', function() {
       var result = replaceLast('hello hello', /hello/g, 'bye');
+      expect(result).to.equal('hello bye');
+    });
+
+    it('many with i flag', function() {
+      var result = replaceLast('hello hello', /HELLO/i, 'bye');
       expect(result).to.equal('hello bye');
     });
 
@@ -116,8 +121,13 @@ describe('replaceLast', function() {
       expect(result).to.equal('hello bye');
     });
 
-    it('many with flag', function() {
+    it('many with g flag', function() {
       var result = replaceLast('hello hello', RegExp('hello', 'g'), 'bye');
+      expect(result).to.equal('hello bye');
+    });
+
+    it('many with i flag', function() {
+      var result = replaceLast('hello hello', RegExp('HELLO', 'i'), 'bye');
       expect(result).to.equal('hello bye');
     });
 
