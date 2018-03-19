@@ -131,6 +131,12 @@ describe('replaceLast', function() {
       expect(result).to.equal('hello bye');
     });
 
+    it('many with invalid flag', function() {
+      expect(function() {
+        replaceLast('hello hello', RegExp('hello', 'q'), 'bye'); // eslint-disable-line no-invalid-regexp
+      }).to.throw(SyntaxError);
+    });
+
     it('contains regex chars', function() {
       var result = replaceLast('hello . hello . hello', RegExp('.'), 'bye');
       expect(result).to.equal('hello . hello . hellbye');
