@@ -21,14 +21,14 @@ function BenchmarkReplaceLast(replaceLast) {
 }
 
 var argsArray = [
-  ['hello hello', /bonjour/, RegExp('bonjour'), 'bye', 'hello hello'],
-  ['hello', /hello/, RegExp('hello'), 'bye', 'bye'],
-  ['hello hello', /hello/, RegExp('hello'), 'bye', 'hello bye'],
-  ['hello hello', /hello/g, RegExp('hello', 'g'), 'bye', 'hello bye'],
-  ['hello hello', /HELLO/i, RegExp('HELLO', 'i'), 'bye', 'hello bye'],
-  ['hello hello', /he(ll)o/, RegExp('he(ll)o'), 'rr', 'hello herro'],
-  ['hello hello', /(ll)(o)/, RegExp('(ll)(o)'), 'r', 'hello herr'],
-  ['hello . hello . hello', /./, RegExp('.'), 'bye', 'hello . hello . hellbye']
+  ['hello hello', /bonjour/, RegExp('bonjour'), 'bye', 'hello hello'],           // none
+  ['hello', /hello/, RegExp('hello'), 'bye', 'bye'],                             // single
+  ['hello hello', /hello/, RegExp('hello'), 'bye', 'hello bye'],                 // many
+  ['hello hello', /hello/g, RegExp('hello', 'g'), 'bye', 'hello bye'],           // many with g flag
+  ['hello hello', /HELLO/i, RegExp('HELLO', 'i'), 'bye', 'hello bye'],           // many with i flag
+  ['hello hello', /he(ll)o/, RegExp('he(ll)o'), 'rr', 'hello herro'],            // matching groups
+  ['hello hello', /(ll)(o)/, RegExp('(ll)(o)'), 'r', 'hello herr'],              // multiple matching groups
+  ['hello . hello . hello', /./, RegExp('.'), 'bye', 'hello . hello . hellbye']  // contains regex chars
 ];
 
 var benchmarkReplaceLastRE = new BenchmarkReplaceLast(replaceLastRE);
