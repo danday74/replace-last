@@ -18,29 +18,6 @@ function replaceAtIndex(str, pattern, replacement, i) {
   return lhs + replacement + rhs;
 }
 
-// replaceLast where pattern is a regex
-function regexReplaceLast(str, pattern, replacement) {
-  pattern = getGlobalPattern(pattern);
-  // var lastIndex = 0;
-  var match;
-  var temp = pattern.exec(str);
-  while (temp != null) {
-    match = temp;
-    // lastIndex = pattern.lastIndex;
-    temp = pattern.exec(str);
-  }
-  if (match == null) return str;
-  if (match.length === 1) {
-    return replaceAtIndex(str, match[0], replacement, match.index);
-  } else {
-    var accReplacement = match[0];
-    for (var i = 1; i < match.length; i++) {
-      accReplacement = strReplaceLast(accReplacement, match[i], replacement);
-    }
-    return replaceAtIndex(str, match[0], accReplacement, match.index);
-  }
-}
-
 // replaceLast where pattern is a string
 function strReplaceLast(str, pattern, replacement) {
   var i = str.lastIndexOf(pattern);
@@ -58,6 +35,25 @@ function replaceLast(str, pattern, replacement) {
     pattern = '' + pattern;
     return strReplaceLast(str, pattern, replacement);
   }
+}
+
+// THE FUNCTION TO BENCHMARK
+function regexReplaceLast(str, pattern, replacement) {
+  pattern = getGlobalPattern(pattern);
+  return str.replace(pattern, function(/* args expanded below */) {
+    var match = arguments[0];
+    var p = Array.prototype.slice.call(arguments, 1, arguments.length - 2);
+    var offset = arguments[arguments.length - 2];
+    var str = arguments[arguments.length - 1];
+    var follow = str.slice(offset);
+    var isLast = follow.match(pattern).length === 1;
+    if (!isLast) return match;
+    if (!p.length) return replacement;
+    for (var i = 0; i < p.length; i++) {
+      match = strReplaceLast(match, p[i], replacement);
+    }
+    return match;
+  });
 }
 
 module.exports = replaceLast;

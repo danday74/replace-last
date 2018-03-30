@@ -18,7 +18,26 @@ function replaceAtIndex(str, pattern, replacement, i) {
   return lhs + replacement + rhs;
 }
 
-// replaceLast where pattern is a regex
+// replaceLast where pattern is a string
+function strReplaceLast(str, pattern, replacement) {
+  var i = str.lastIndexOf(pattern);
+  if (i < 0) return str;
+  return replaceAtIndex(str, pattern, replacement, i);
+}
+
+// replaceLast
+function replaceLast(str, pattern, replacement) {
+  str = '' + str;
+  if (typeof replacement === 'undefined') return str;
+  if (isRegex(pattern)) {
+    return regexReplaceLast(str, pattern, replacement);
+  } else {
+    pattern = '' + pattern;
+    return strReplaceLast(str, pattern, replacement);
+  }
+}
+
+// THE FUNCTION TO BENCHMARK
 function regexReplaceLast(str, pattern, replacement) {
   pattern = getGlobalPattern(pattern);
   // var lastIndex = 0;
@@ -38,25 +57,6 @@ function regexReplaceLast(str, pattern, replacement) {
       accReplacement = strReplaceLast(accReplacement, match[i], replacement);
     }
     return replaceAtIndex(str, match[0], accReplacement, match.index);
-  }
-}
-
-// replaceLast where pattern is a string
-function strReplaceLast(str, pattern, replacement) {
-  var i = str.lastIndexOf(pattern);
-  if (i < 0) return str;
-  return replaceAtIndex(str, pattern, replacement, i);
-}
-
-// replaceLast
-function replaceLast(str, pattern, replacement) {
-  str = '' + str;
-  if (typeof replacement === 'undefined') return str;
-  if (isRegex(pattern)) {
-    return regexReplaceLast(str, pattern, replacement);
-  } else {
-    pattern = '' + pattern;
-    return strReplaceLast(str, pattern, replacement);
   }
 }
 

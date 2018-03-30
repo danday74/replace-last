@@ -12,7 +12,8 @@
     "build": "npm test && npm run enforcer",
     "browserify": "webpack --mode production && (gcf || true)",
     "postcommit": "cross-env FORCE_COLOR=true npm run browserify",
-    "prepush": "npm run build"
+    "prepush": "npm run build",
+    "benchmarks": "node benchmarks"
   },
   "dependencies": {},
   "devDependencies": {
