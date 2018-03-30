@@ -3,7 +3,7 @@
 var _ = _ || require('lodash');
 var chai = chai || require('chai');
 var expect = chai.expect;
-var replaceLast = replaceLast || require('./replaceLast');
+var replaceLast = replaceLast || require('../index'); // index contains polyfill
 
 describe('replaceLast', function() {
 
