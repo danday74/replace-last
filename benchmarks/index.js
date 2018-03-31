@@ -1,3 +1,5 @@
+'use strict';
+
 var assert = require('assert');
 var now = require('performance-now');
 var replaceLastRE = require('./regexpExec');
