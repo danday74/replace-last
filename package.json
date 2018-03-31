@@ -1,6 +1,6 @@
 {
   "name": "replace-last",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "JavaScript replaceLast function - Replaces last match for pattern in string with replacement",
   "author": "danday74",
   "license": "ISC",
