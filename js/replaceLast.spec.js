@@ -181,8 +181,9 @@ describe('replaceLast', function() {
 
     it('str undefined', function() {
       var results = resultsFromArgs(undefined, 'hello', 'bye');
-      expect(results.result).to.equal('undefined');
-      expect(results.lodashResult).to.equal(''); // inconsistent result, prefer 'undefined'
+      expect(results.result).to.equal('');
+      expect(results.lodashResult).to.equal('');
+      expect(results.result).to.equal(results.lodashResult);
     });
 
     it('pattern not a regex or string', function() {

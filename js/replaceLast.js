@@ -50,6 +50,7 @@ function strReplaceLast(str, pattern, replacement) {
 
 // replaceLast
 function replaceLast(str, pattern, replacement) {
+  if (str == null) str = '';
   str = '' + str;
   if (typeof replacement === 'undefined') return str;
   if (isRegex(pattern)) {

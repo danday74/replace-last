@@ -44,7 +44,7 @@ replaceLast(str, pattern, replacement);
 
 ## Arguments
 
-str (string): The string to modify.
+str='' (string): The string to modify.
 
 pattern (RegExp|string): The pattern to replace.
 
