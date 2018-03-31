@@ -81,7 +81,7 @@ God is the **last**?
 > "Behold, I (Jesus) am coming quickly, and My reward is with Me, to give to each one according to the merit of his deeds (earthly works, faithfulness).
 > I am the Alpha and the Omega, the First and the Last, the Beginning and the End [the Eternal One]."
 
-[REVELATION 22:12-13 AMP](https://www.bible.com/en-GB/bible/1588/REV.22.12-13.amp "Jesus loves you")
+[Revelation 22:12-13 AMP](https://www.bible.com/en-GB/bible/1588/REV.22.12-13.amp "Jesus loves you")
 
 Jesus, King of Kings (**first**) put himself **last** - paying the death penalty for your wrongdoing - by willingly dying on the cross for you in your place.
 
