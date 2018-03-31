@@ -66,8 +66,8 @@ replaceLast('hello hello hello', /he(ll)o/, 'rr');
 replaceLast('hello hello hello', RegExp('.ell.'), 'bye');
 // => 'hello hello bye'
 
-replaceLast(778, 8, 7);
-// => '777'
+replaceLast(777, 7, 8);
+// => '778'
 ```
 
 

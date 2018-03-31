@@ -10,8 +10,8 @@ describe('replaceLast', function() {
   describe('example', function() {
 
     it('number', function() {
-      var result = replaceLast(778, 8, 7);
-      expect(result).to.equal('777');
+      var result = replaceLast(777, 7, 8);
+      expect(result).to.equal('778');
     });
 
     it('string', function() {
