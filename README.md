@@ -6,7 +6,7 @@
 <br>[![npm](https://img.shields.io/npm/v/replace-last.svg)](https://www.npmjs.com/package/replace-last)
 [![dependencies](https://david-dm.org/danday74/replace-last/status.svg)](https://david-dm.org/danday74/replace-last)
 [![downloads](https://img.shields.io/npm/dm/replace-last.svg)](https://www.npmjs.com/package/replace-last)
-[![node](https://img.shields.io/node/v/replace-last.svg)](https://www.npmjs.com/package/replace-last)
+[![node](https://img.shields.io/node/v/replace-last.svg)](https://www.npmjs.com/package/replace-last) [![Greenkeeper badge](https://badges.greenkeeper.io/danday74/replace-last.svg)](https://greenkeeper.io/)
 
 **JavaScript replaceLast function - Replaces last match for pattern in string with replacement**
 
